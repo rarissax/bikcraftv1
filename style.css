@@ -1,11 +1,20 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+}
+
 body {
   margin: 0rem;
-  background: #f7f7f7;
+  background: var(--fundo-1);
   font-family: Arial, Helvetica, sans-serif;
   display: grid;
   justify-items: center;
   gap: 3.75rem;
   margin-top: 60px;
+  color: var(--texto);
 }
 
 .header {
@@ -51,15 +60,15 @@ a {
 .menu a {
   display: block;
   padding: 1rem 2rem;
-  background: #fff;
-  color: #000;
+  background: var(--fundo-2);
+  color: var(--texto);
   border-radius: 0.25rem;
   padding: 1rem 2rem;
-  border: 2px solid #fff;
+  border: 2px solid var(--fundo-2);
 }
 
 .menu a:hover {
-  border-color: #e21;
+  border-color: var(--cor-primaria);
 }
 
 .conteudo {
@@ -68,8 +77,11 @@ a {
   max-width: 62.5rem;
 }
 
+.introducao a {
+  color: var(--texto);
+}
 .introducao {
-  background: #fff;
+  background: var(--fundo-2);
   display: grid;
   text-align: right;
   padding: 2.5rem;
@@ -87,7 +99,7 @@ a {
   content: "";
   width: 3.75rem;
   height: 0.25rem;
-  background: #e21;
+  background: var(--cor-primaria);
   position: absolute;
   top: 1.87rem;
   right: -1.87rem;
@@ -99,19 +111,19 @@ a {
 }
 
 .botao {
-  background: #e21;
-  color: #fff;
+  background: var(--cor-primaria);
+  color: var(--fundo-2);
   padding: 1rem 2rem;
   border-radius: 0.25rem;
 }
 
 .botao:hover {
-  background-color: #900;
+  background-color: var(--cor-primaria-escura);
 }
 
 .subtitulo {
   font-size: 4rem;
-  color: #c6c6c6;
+  color: rgba(0, 0, 0, 0.2);
   text-align: right;
   padding: 2.5rem;
   text-transform: uppercase;
@@ -120,7 +132,7 @@ a {
 }
 
 .vantagens {
-  background: #fff;
+  background: var(--fundo-2);
   padding: 2.5rem;
 }
 
@@ -137,15 +149,15 @@ a {
 }
 
 .vantagens-item:hover {
-  border-color: #e21;
+  border-color: var(--cor-primaria);
 }
 
 .vantagens-item:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo-1);
 }
 
 .rodape {
-  background: #fff;
+  background: var(--fundo-2);
   width: 100%;
   text-align: center;
   padding: 2.5rem;
@@ -190,5 +202,45 @@ a {
   }
   .subtitulo {
     font-size: 2rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111;
+    --fundo-2: #000;
+    --texto: #fff;
+  }
+  .menu a {
+    background: var(--fundo-2);
+    color: var(--texto);
+    border: 2px solid  var(--fundo-2);
+  }
+  .introducao {
+    background-color: var(--fundo-2);
+    color: var(--texto);
+  }
+  .introducao a {
+    color: var(--texto);
+  }
+  .subtitulo {
+    color: rgba(255, 255, 255, 0.2);
+    background-image: url("./img/ondadark.svg");
+  }
+  .conteudo-vantagem {
+    background:var(--fundo-1);
+  }
+  body {
+    background: #222;
+  }
+  .vantagens {
+    background: var(--fundo-2);
+    color:var(--texto);
+  }
+  .vantagens-item:nth-child(odd) {
+    background-color:var(--fundo-1);
+  }
+  .rodape {
+    background: var(--fundo-2);
+    color:var(--texto);
   }
 }
